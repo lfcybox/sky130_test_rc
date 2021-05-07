@@ -4,8 +4,8 @@ K {}
 V {}
 S {}
 E {}
-N 1770 -1710 1770 -1670 { lab=#net1}
-N 1770 -1710 1820 -1710 { lab=#net1}
+N 1770 -1710 1770 -1670 { lab=IN}
+N 1770 -1710 1820 -1710 { lab=IN}
 N 1880 -1710 1930 -1710 { lab=OUT}
 N 1930 -1710 1930 -1670 { lab=OUT}
 N 1930 -1610 1930 -1580 { lab=GND}
@@ -17,7 +17,7 @@ N 2040 -1620 2040 -1580 { lab=GND}
 N 1930 -1580 2040 -1580 { lab=GND}
 C {devices/gnd.sym} 1840 -1580 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} 1930 -1710 1 0 {name=l2 sig_type=std_logic lab=OUT}
-C {devices/code.sym} 1780 -1890 0 0 {name=TT_MODELS
+C {devices/code.sym} 1610 -1690 0 0 {name=TT_MODELS
 spice_ignore=false
 only_toplevel=true
 format="tcleval( @value )"
@@ -75,3 +75,4 @@ mult=1}
 C {devices/gnd.sym} 1850 -1690 0 0 {name=l3 lab=GND}
 C {devices/gnd.sym} 1850 -1690 0 0 {name=l4 lab=GND}
 C {devices/gnd.sym} 1910 -1640 1 0 {name=l5 lab=GND}
+C {devices/lab_pin.sym} 1770 -1710 1 0 {name=l6 sig_type=std_logic lab=IN}
