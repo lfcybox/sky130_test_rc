@@ -76,3 +76,9 @@ C {devices/gnd.sym} 1850 -1690 0 0 {name=l3 lab=GND}
 C {devices/gnd.sym} 1850 -1690 0 0 {name=l4 lab=GND}
 C {devices/gnd.sym} 1910 -1640 1 0 {name=l5 lab=GND}
 C {devices/lab_pin.sym} 1770 -1710 1 0 {name=l6 sig_type=std_logic lab=IN}
+C {devices/code.sym} 1620 -1880 0 0 {name=SIM
+only_toplevel=false 
+value="
+.tran 1n 1u uic
+.save all
+"}
