@@ -79,6 +79,9 @@ C {devices/lab_pin.sym} 1770 -1710 1 0 {name=l6 sig_type=std_logic lab=IN}
 C {devices/code.sym} 1620 -1880 0 0 {name=SIM
 only_toplevel=false 
 value="
-.tran 1n 1u uic
 .save all
+.control
+tran 1n 1u uic
+plot out
+.endc
 "}
