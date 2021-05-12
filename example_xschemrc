@@ -1,3 +1,4 @@
+# Have this file on the place where you run xschem. Make sure to update the library paths SKYWATER_MODELS and SKYWATER_STDCELLS
 #### xschemrc system configuration file
 
 #### values may be overridden by user's ~/.xschem/xschemrc configuration file
