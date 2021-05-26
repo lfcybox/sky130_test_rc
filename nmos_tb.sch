@@ -27,62 +27,6 @@ C {devices/lab_pin.sym} -80 0 0 0 {name=l1 lab=G}
 C {devices/lab_pin.sym} 0 -80 0 0 {name=l2 lab=D}
 C {devices/lab_pin.sym} 60 0 0 1 {name=l3 lab=B}
 C {devices/lab_pin.sym} 0 80 0 0 {name=l4 lab=S}
-C {devices/code.sym} 140 -70 0 0 {name=SIM
-only_toplevel=true 
-value="
-Vg G 0 1.8
-Vs S 0 0
-Vd D 0 1.8
-Vb B 0 0
-
-*.dc Vd 0 1.8 0.1 Vg 0 1.8 0.6
-.dc Vd 0 1.8 0.1
-.save v(G) v(D) v(S) v(B)
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gmbs]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vdsat]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vth]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vbs]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgg]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgs]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgd]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cbg]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cbd]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cbs]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cdg]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cdd]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cds]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[csg]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[csd]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[css]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgb]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cdb]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[csb]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cbb]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[capbd]
-.save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[capbs]
-
-
-*.control
-*save all
-*dc Vd 0 1.8 0.05 Vg 0 1.8 0.3
-*plot all.vd1#branch vs D1v8
-*plot all.vd2#branch vs D1v8
-*plot all.vd3#branch vs D3v3
-*plot all.vd4#branch vs D5v0
-*plot all.vd5#branch vs D10v5
-*plot all.vd6#branch vs D16v0
-*plot all.vd8#branch vs D1v8
-*plot all.vd7#branch vs D1v8
-*save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
-*op
-*write test_nmos.raw
-*.endc
-"}
 C {devices/code_shown.sym} -650 -80 0 0 {name=CORNER
 only_toplevel=true
 format="tcleval( @value )"
@@ -93,4 +37,56 @@ value="
 *.lib \\\\$::SKYWATER_MODELS\\\\/models/sky130.lib.spice ff
 *.lib \\\\$::SKYWATER_MODELS\\\\/models/sky130.lib.spice sf
 *.lib \\\\$::SKYWATER_MODELS\\\\/models/sky130.lib.spice fs
+"}
+C {devices/code.sym} 120 -60 0 0 {name=SIM_CONTROL
+only_toplevel=true 
+value="
+Vg G 0 1.8
+Vs S 0 0
+Vd D 0 1.8
+Vb B 0 0
+
+.control
+
+save v(G) v(D) v(S) v(B)
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gm]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gmbs]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vdsat]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vth]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vbs]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vgs]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[vds]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgg]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgs]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgd]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cbg]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cbd]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cbs]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cdg]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cdd]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cds]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[csg]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[csd]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[css]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cgb]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cdb]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[csb]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[cbb]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[capbd]
+save @m.xm1.msky130_fd_pr__nfet_01v8_lvt[capbs]
+
+*dc Vd 0 1.8 0.1
+dc Vd 0 1.8 0.3 Vg 0 1.8 0.3
+reshape all [7] ;same value as second sweep length
+
+plot @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id] vs v(d) title 'id vs vd'
+plot @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds] vs v(d) ylog title 'gds vs vd'
+
+set hcopypscolor=1 ;colorful plots
+hardcopy id_vd.ps @m.xm1.msky130_fd_pr__nfet_01v8_lvt[id] vs v(d) title 'id vs vd'
+hardcopy gds_vd.ps @m.xm1.msky130_fd_pr__nfet_01v8_lvt[gds] vs v(d) ylog title 'gds vs vd'
+
+.endc
 "}
